@@ -1,21 +1,37 @@
-<table mat-table [dataSource]="departamento" class="mat-elevation-z8">
-
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
-  <ng-container matColumnDef="ID_DEPARTAMENTO">
-    <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell *matCellDef="let element"> {{element.ID_DEPARTAMENTO}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="DEPART_NAME">
-    <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
-    <td mat-cell *matCellDef="let element"> {{element.DEPART_NAME}} </td>
-  </ng-container>
-
- 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="center">
+  <button mat-icon-button>    
+    <a mat-icon-button routerLink="/add/dep">
+      <mat-icon  class="add" color="accent">add_circle</mat-icon>
+    </a>
+  </button>
+</div>
+<nav class="center">
+  <table mat-table [dataSource]="departamento" class="mat-elevation-z8">
+    <ng-container matColumnDef="ID_DEPARTAMENTO">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let departamento"> {{departamento.ID_DEPARTAMENTO}} </td>
+    </ng-container>
+    <ng-container matColumnDef="DEPART_NAME">
+      <th mat-header-cell *matHeaderCellDef>NOMBRE</th>
+      <td mat-cell *matCellDef="let departamento"> {{departamento.DEPART_NAME}} </td>
+    </ng-container>
+    <ng-container matColumnDef="EDITAR">
+      <th mat-header-cell *matHeaderCellDef>EDITAR</th>
+      <td mat-cell *matCellDef="let departamento">
+        <a mat-icon-button  ></a>
+        <mat-icon color="primary">edit</mat-icon>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="ELIMINAR">
+      <th mat-header-cell *matHeaderCellDef>ELIMINAR</th>
+      <td mat-cell *matCellDef="let departamento"> 
+        <button  mat-icon-button >
+        <mat-icon color="warn">delete</mat-icon>
+      </button></td>
+    </ng-container>
+   
+    
+    <tr mat-header-row *matHeaderRowDef="['ID_DEPARTAMENTO', 'DEPART_NAME', 'EDITAR', 'ELIMINAR']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['ID_DEPARTAMENTO', 'DEPART_NAME',  'EDITAR', 'ELIMINAR'];"></tr>
+  </table>
+</nav>

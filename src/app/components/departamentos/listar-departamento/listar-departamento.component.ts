@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Departamento } from 'src/app/models/departamento';
 import { DepartamentoService } from 'src/app/services/departamento.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listar-departamento',
@@ -9,10 +10,11 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
 })
 export class ListarDepartamentoComponent implements OnInit {
   departamento:Departamento[];
-  displayedColumns :string[] = ['ID_DEPARTAMENTO','DEPART_NAME']
+  //displayedColumns :string[] = ['ID_DEPARTAMENTO','DEPART_NAME']
   constructor(private depatamentoService:DepartamentoService) { }
 
   ngOnInit(): void {
+    
     this.depatamentoService.getDepartamento().subscribe(
       (data)=>{
         this.departamento =data['cursor_departamento'];
@@ -20,6 +22,6 @@ export class ListarDepartamentoComponent implements OnInit {
       }
     )  
   }
-
+  
 
 }

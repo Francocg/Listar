@@ -14,6 +14,11 @@ import { UpdateDepartamentoComponent } from './components/departamentos/update-d
 import { DepartamentoService } from './services/departamento.service';
 import {MatMenuModule} from '@angular/material/menu';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatTableModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule
   ],
   providers: [
     DepartamentoService

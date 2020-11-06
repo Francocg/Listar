@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Departamento } from 'src/app/models/departamento';
+import { DepartamentoService } from 'src/app/services/departamento.service';
 
 @Component({
   selector: 'app-add-departamento',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDepartamentoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private departamentoService:DepartamentoService,private router:Router) { }
 
   ngOnInit(): void {
   }
+  departamentoModel:Departamento = new Departamento();
+  onSubmit(){
+
+  }
+  
 
 }
