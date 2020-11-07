@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./listar-departamento.component.css']
 })
 export class ListarDepartamentoComponent implements OnInit {
+  titularAlerta:string='';
   departamento:Departamento[];
   //displayedColumns :string[] = ['ID_DEPARTAMENTO','DEPART_NAME']
   constructor(private depatamentoService:DepartamentoService) { }
@@ -18,10 +19,21 @@ export class ListarDepartamentoComponent implements OnInit {
     this.depatamentoService.getDepartamento().subscribe(
       (data)=>{
         this.departamento =data['cursor_departamento'];
-        alert(this.departamento);
+       //alert(this.departamento);
+       
+     
       }
     )  
   }
+    delRol(num:number):void{
+      Swal.fire(
+        'The Internet?',
+        'That thing is still around?',
+        'question'
+      )  
+    } 
+  }
+
+    
   
 
-}
