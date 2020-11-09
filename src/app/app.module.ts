@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import { BuscarDepartamentoComponent } from './components/buscar-departamento/buscar-departamento.component';
+import { DatosBuscarComponent } from './components/departamentos/datos-buscar/datos-buscar.component';
 
 
 
@@ -27,6 +29,8 @@ import {MatCardModule} from '@angular/material/card';
     ListarDepartamentoComponent,
     AddDepartamentoComponent,
     UpdateDepartamentoComponent,
+    BuscarDepartamentoComponent,
+    DatosBuscarComponent,
    
   ],
   imports: [

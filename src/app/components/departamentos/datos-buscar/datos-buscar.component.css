@@ -1,0 +1,17 @@
+.center {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .lado {
+    display: flex;
+    justify-content: right;
+  }
+  table {
+    width: 20%;
+  }
+  .add{
+      color: #00c853;
+      font-size: 40px;
+  }
