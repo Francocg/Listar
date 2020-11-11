@@ -20,8 +20,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { BuscarDepartamentoComponent } from './components/buscar-departamento/buscar-departamento.component';
 import { DatosBuscarComponent } from './components/departamentos/datos-buscar/datos-buscar.component';
-
-
+import {LayoutModule} from '@angular/cdk/layout';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,13 @@ import { DatosBuscarComponent } from './components/departamentos/datos-buscar/da
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    LayoutModule,
+    MatExpansionModule,
+    MatListModule,
+    MatSidenavModule
+
+
   ],
   providers: [
     DepartamentoService

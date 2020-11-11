@@ -9,15 +9,13 @@
         <mat-card-content>
             <mat-form-field appearance="outline">
                 <mat-label>Departamento</mat-label>
-                <input matInput placeholder="Ingresar Departamento">
-                
+                <input matInput [(ngModel)]="departamentoModel.depart_name" placeholder="Ingresar Departamento" name="depart_name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
-            <section>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary" routerLink="/listar">Agregar</button>
-                    <button mat-raised-button color="warn" routerLink="/listar">Cancelar</button>
-                </div>
-            </section>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="create()">Registrar</button>
+                <a mat-raised-button routerLink="/listar" color="warn">Cancelar</a>
+            </mat-card-actions>
         </mat-card-content>
       </mat-card>
 

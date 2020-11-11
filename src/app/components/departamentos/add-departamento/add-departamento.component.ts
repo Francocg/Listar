@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router, ActivatedRoute} from '@angular/router';
 import { Departamento } from 'src/app/models/departamento';
 import { DepartamentoService } from 'src/app/services/departamento.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-departamento',
@@ -9,15 +11,21 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
   styleUrls: ['./add-departamento.component.css']
 })
 export class AddDepartamentoComponent implements OnInit {
-
-  constructor(private departamentoService:DepartamentoService,private router:Router) { }
-
-  ngOnInit(): void {
-  }
   departamentoModel:Departamento = new Departamento();
-  onSubmit(){
 
-  }
+  constructor(private departamentoService:DepartamentoService,private router:Router, private activatedRoute:ActivatedRoute) { }
+
+  ngOnInit(): void {}
+
+ public create():void{
+   console.log(this.departamentoModel)
+   this.departamentoService.addDepartamento(this.departamentoModel).subscribe(
+     response=>{
+       this.router.navigate(['/listar'])
+      swal.fire('Nuevo Departamento', `Departamento ${this.departamentoModel.depart_name} creado con exito`,"success")  
+     }
+   )
+ }
   
 
 }

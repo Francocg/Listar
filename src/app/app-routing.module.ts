@@ -7,10 +7,10 @@ import { ListarDepartamentoComponent } from './components/departamentos/listar-d
 import { UpdateDepartamentoComponent } from './components/departamentos/update-departamento/update-departamento.component';
 
 const routes: Routes = [
-  {path: '',redirectTo:"/home", pathMatch: "full"},
+ // {path: '',redirectTo:"/home", pathMatch: "full"},
   {path: 'listar',component:ListarDepartamentoComponent},
   {path: 'add/dep', component:AddDepartamentoComponent},
-  {path: 'upd/dep', component:UpdateDepartamentoComponent},
+  {path: 'update/:id', component:UpdateDepartamentoComponent},
   {path: 'bus/dep', component:BuscarDepartamentoComponent},
   {path: 'dat/bus', component:DatosBuscarComponent}
 ];
