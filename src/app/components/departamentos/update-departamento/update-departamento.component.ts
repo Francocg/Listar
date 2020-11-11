@@ -23,11 +23,14 @@ export class UpdateDepartamentoComponent implements OnInit {
       if(id){
         this.departamentoService.getDepartamento(id).subscribe(
           (data)=>{
-            this.departamento=data['cursor_departamento']
-            this.departamento.id_departamento=this.departamento[0].ID_DEPARTAMENTO;
-            this.departamento.depart_name=this.departamento[0].DEPART_NAME;
+            this.departamentos=data['cursor_departamento']
+           
+            this.departamento.depart_name=this.departamentos[0].DEPART_NAME;
+            this.departamento.id_departamento=this.departamentos[0].ID_DEPARTAMENTO;
             
           })
+        
+        
         
       }
     })

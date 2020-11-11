@@ -18,14 +18,10 @@ export class AddDepartamentoComponent implements OnInit {
   ngOnInit(): void {}
 
  public create():void{
-   console.log(this.departamentoModel)
    this.departamentoService.addDepartamento(this.departamentoModel).subscribe(
      response=>{
-       this.router.navigate(['/listar'])
-      swal.fire('Nuevo Departamento', `Departamento ${this.departamentoModel.depart_name} creado con exito`,"success")  
-     }
-   )
+      swal.fire('Nuevo Departamento', `Departamento ${this.departamentoModel.depart_name} creado con exito`,"success") 
+      this.router.navigate(['/listar']) 
+     })
  }
-  
-
 }

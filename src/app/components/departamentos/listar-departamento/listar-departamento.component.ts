@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./listar-departamento.component.css']
 })
 export class ListarDepartamentoComponent implements OnInit {
+  [x: string]: any;
  departamento:any;
   //displayedColumns :string[] = ['ID_DEPARTAMENTO','DEPART_NAME']
   constructor(private depatamentoService:DepartamentoService, private router:Router) { }
@@ -29,17 +30,16 @@ export class ListarDepartamentoComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.depatamentoService.deleteDepartamento(num).subscribe(
-          response=>{
-            this.listar()
-            Swal.fire(
-              'Eliminado!',
-              'El registro ha sido eliminado.',
-              'success')
-          })        
-      }
+        this.listar()
+        Swal.fire(
+          'Eliminado!',
+          'El registro ha sido eliminado.',
+          'success')
+        }    
+      this.depatamentoService.deleteDepartamento(num).subscribe(
+        response=>{      
+        })
     })  
-  
   }
   listar():void{
     this.depatamentoService.getDepartamentos().subscribe(
@@ -51,6 +51,7 @@ export class ListarDepartamentoComponent implements OnInit {
       }
     )
   }
+  /*
   delLogica(num:number):void{
     Swal.fire({
       title: 'Estas seguro?',
@@ -62,20 +63,21 @@ export class ListarDepartamentoComponent implements OnInit {
       confirmButtonText: 'Si, Borra!'
     }).then((result)=>{
       if (result.isConfirmed){
-        this.depatamentoService.updateLogica(num).subscribe(
-          response=>{
-            this.listar()
-            Swal.fire(
-              'Eliminado!',
-              'El registro ha sido eliminado.',
-              'success'
-            )
-          })
-        
+      this.listar()
+        Swal.fire(
+          'Eliminado!',
+          'El registro ha sido eliminado.',
+          'success'
+        ) 
       }
+      this.DepartamentoService.deleteDepartamento(num).subscribe(
+        response=>{
+
+        }
+      )
     })
   }
-   
+   */
   }
 
     

@@ -9,7 +9,7 @@ import { UpdateDepartamentoComponent } from './components/departamentos/update-d
 const routes: Routes = [
  // {path: '',redirectTo:"/home", pathMatch: "full"},
   {path: 'listar',component:ListarDepartamentoComponent},
-  {path: 'add/dep', component:AddDepartamentoComponent},
+  {path: 'dep/add', component:AddDepartamentoComponent},
   {path: 'update/:id', component:UpdateDepartamentoComponent},
   {path: 'bus/dep', component:BuscarDepartamentoComponent},
   {path: 'dat/bus', component:DatosBuscarComponent}

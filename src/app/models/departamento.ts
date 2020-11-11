@@ -1,6 +1,6 @@
 export class Departamento {
     id_departamento:number;
-    depart_name:string;
+    depart_name:String;
   
  
 }

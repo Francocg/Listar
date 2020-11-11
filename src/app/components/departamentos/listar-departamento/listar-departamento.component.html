@@ -1,5 +1,5 @@
 <div class="center">
-  <a mat-button routerLink="/add/dep" class="add"><mat-icon>add</mat-icon>Registrar Rol</a>
+  <a mat-button routerLink="/dep/add" class="add"><mat-icon>add</mat-icon>Registrar Departamento</a>
   
 </div>
 <nav class="center">
@@ -23,7 +23,7 @@
     <ng-container matColumnDef="ELIMINAR">
       <th mat-header-cell *matHeaderCellDef>ELIMINAR</th>
       <td mat-cell *matCellDef="let departamento"> 
-        <button (click)="delLogica(departamento.ID_DEPARTAMENTO)" mat-icon-button>
+        <button (click)="delDepartamento(departamento.ID_DEPARTAMENTO)" mat-icon-button>
           <mat-icon color="warn">delete</mat-icon>
         </button>
       </td>
